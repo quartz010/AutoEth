@@ -35,9 +35,9 @@ Account.prototype.getBalance = function (wallet, cb) {
     
     for (i=0; i < wallet.length ; i++) {
         
-        web3.eth.getBalance(wallet[i].address, function(ree, res){
-            
-            console.log(res);
+        web3.eth.getBalance(wallet[i].address, function(err, res){
+            if(!err)
+                console.log(res);
         
         })
     }

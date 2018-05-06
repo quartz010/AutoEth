@@ -4,6 +4,8 @@ var Account = require('./module/account');
 var Logger = require('./module/logger');
 var async = require('async');
 
+var keys = require('./protected/keys')
+
 // commander
 
 program
@@ -18,7 +20,7 @@ if (typeof web3 !== 'undefined') {
 
 } else {
     // set the provider you want from Web3.providers
-    web3 = new Web3(new Web3.providers.HttpProvider("https://ropsten.infura.io/EF0HiTihtDEGGyVZ5Yvs"));
+    web3 = new Web3(new Web3.providers.HttpProvider(keys.api));
     console.log("Remote Loaded!");
     web3.eth.getBlock(48, function (error, result) {
         if (!error)
