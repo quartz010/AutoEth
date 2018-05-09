@@ -43,16 +43,16 @@ if (program.num && program.create) {
     account.createAccount(program.num, function(err, res){
         //console.log(res);
         //logger.saveAccount(res);       
-        account.getBalance(res, function(){});
+        account.getBalance(res, function(){
+
+            console.log(res);
+        });
     });
 }
 
 
 
-
 //web3.eth.personal.newAccount("password").then(console.log);
-
-
 
 //console.log(web3.eth.accounts.privateKeyToAccount(account.privateKey));
 
